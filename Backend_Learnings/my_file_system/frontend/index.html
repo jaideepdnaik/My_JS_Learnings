@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File System Viewer</title>
+</head>
+<body>
+    <h1>File System Viewer</h1>
+    <div id="content"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/files/')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('content').innerHTML = html;
+                });
+        });
+
+        function deleteFile(filePath) {
+            console.log('Attempting to delete:', filePath);
+            fetch('/delete', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ path: filePath })
+            })
+            .then(response => {
+                console.log('Response from delete request:', response);
+                if (response.ok) {
+                    window.location.reload();
+                } else {
+                    response.text().then(text => {
+                        alert('Failed to delete file: ' + text);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error during fetch:', error);
+                alert('Error during delete operation');
+            });
+        }
+    </script>
+</body>
+</html>

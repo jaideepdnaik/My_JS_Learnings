@@ -1,0 +1,161 @@
+/* Reset and base styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2 {
+    font-size: 2em;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Post Container */
+div.post, div.content {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+h3.username {
+    color: #0073e6;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+h4.content {
+    color: #555;
+    font-size: 1em;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Hover effect for post container */
+div.post:hover, div.content:hover {
+    background-color: #f9f9f9;
+}
+
+/* Form styles */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004085;
+    transform: translateY(1px);
+}
+
+/* Anchor tag styles */
+a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: #0056b3;
+}
+
+
+/* Wrapper for the delete form */
+.post .delete-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Ensure the form is displayed inline within the delete wrapper */
+.delete-wrapper form[action*="_method=DELETE"] {
+    display: inline-block;
+}
+
+/* Style the delete button */
+.delete-wrapper form[action*="_method=DELETE"] button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+}
+
+/* Change background color on hover */
+.delete-wrapper form[action*="_method=DELETE"] button:hover {
+    background-color: #ff1a1a;
+}
+
+/* Change background color on active */
+.delete-wrapper form[action*="_method=DELETE"] button:active {
+    background-color: #e60000;
+    transform: translateY(1px);
+}
