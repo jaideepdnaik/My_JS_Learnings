@@ -1,2 +1,2 @@
-# UNITY
-My Unity Projects
+# JavaScript
+My JS Learnings
